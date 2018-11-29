@@ -1,0 +1,26 @@
+p{
+	font-size: 100px;
+}
+
+body{
+	
+	color: grey;
+	font-size: 25px;
+	background-color: black;
+}
+
+.button{
+	border-radius: 100px;
+	width: 100%;
+	font-size: 50px;
+}
+
+.half{
+	font-size: 20px;
+	width: 45%;
+}
+
+.third{
+	font-size: 12px;
+	width: 30%;
+}
