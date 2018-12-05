@@ -1,13 +1,16 @@
-
-
 function updateInfo(){
 	sendAction(showInfo);
-}
+};
+
+function changeVolume(){
+	newVolume = document.getElementById("volumeSlider").value;
+	sendAction(newVolume);
+};
 
 function handleResponse(thisResponse){
 	// alert(thisButton);
 
-	 document.getElementById("trackInfoPlaceholder").innerHTML = thisResponse;
+	document.getElementById("trackInfoPlaceholder").innerHTML = thisResponse;
 
 	switch(thisResponse){
 		case "togglePlay":
@@ -34,12 +37,17 @@ function handleResponse(thisResponse){
 
 		break;
 
+		case "changeVolume":
+		break;
+
+
 		default:
 		break;
 	}
 };
 
 function sendAction(thisAction){
+
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 		if(request.readyState == 4 && request.status == 200)
@@ -47,4 +55,6 @@ function sendAction(thisAction){
 	}
 	request.open("GET", "/actions.php?action="+thisAction, true);
 	request.send(null);
-}
+};
+
+updateInfo();

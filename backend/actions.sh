@@ -3,9 +3,11 @@
 #echo "Bash: $@"
 
 case $@ in
+
 	"showInfo")
 		mpc -f "%title% by %artist%" | head -n 1
 	;;
+
 
 	"togglePlay")
 		mpc -f "%title% by %artist%" toggle | head -n 1
@@ -30,4 +32,9 @@ case $@ in
 	"showGenres")
 		mpc list genre
 	;;
+
+	*)
+		mpc -f "%title% by %artist%" volume $@ | head -n 1
+	;;
+
 esac

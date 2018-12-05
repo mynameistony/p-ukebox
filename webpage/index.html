@@ -1,19 +1,26 @@
-<script src="scripts.js">updateInfo();</script>
+<script src="scripts.js"></script>
 <link href="style.css" rel="stylesheet" type="text/css">
-<body>
+<body onload="updateInfo()">
 <center>
 	<p id=trackInfoPlaceholder>
 	
 	</p>
 
+	<input 
+		onChange="changeVolume()" 
+		id="volumeSlider"
+		class="volumeSlider" 
+		type="range"
+	>
+
 	<button	onClick="sendAction('togglePlay')" class=button>Play
 	</button>
 <br><br>
 	<button
-	onClick="sendAction('previousSong')" class="half button"><--
+	onClick="sendAction('previousSong')" class="button half"><--
 	</button>
 	<button
-	onClick="sendAction('nextSong')" class="half button">--> 
+	onClick="sendAction('nextSong')" class="button half">--> 
 	</button>
 
 <br><br>
@@ -30,3 +37,4 @@
 	</button>
 </center>	
 </body>
+<script type="text/javascript"><updateInfo()</script>
