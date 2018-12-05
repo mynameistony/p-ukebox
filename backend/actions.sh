@@ -4,15 +4,15 @@
 
 case $@ in
 	"togglePlay")
-		echo "add to backend"
+		mpc toggle
 	;;
 
 	"previousSong")	
-		echo "add to backend"
+		mpc prev
 	;;
 
 	"nextSong")
-		echo "add to backend"
+		mpc next
 	;;
 
 	"showArtists")

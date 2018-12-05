@@ -27,7 +27,6 @@ function buttonPressed(thisButton){
 		break;
 
 		default:
-			alert("Ya dun goofd!");
 		break;
 	}
 };
