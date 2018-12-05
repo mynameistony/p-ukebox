@@ -1,7 +1,15 @@
-function buttonPressed(thisButton){
-	alert(thisButton);
 
-	switch(thisButton){
+
+function updateInfo(){
+	sendAction(showInfo);
+}
+
+function handleResponse(thisResponse){
+	// alert(thisButton);
+
+	 document.getElementById("trackInfoPlaceholder").innerHTML = thisResponse;
+
+	switch(thisResponse){
 		case "togglePlay":
 
 		break;
@@ -31,11 +39,11 @@ function buttonPressed(thisButton){
 	}
 };
 
-function sendAction(thisAction, thisResult){
+function sendAction(thisAction){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 		if(request.readyState == 4 && request.status == 200)
-			buttonPressed(request.responseText);
+			handleResponse(request.responseText);
 	}
 	request.open("GET", "/actions.php?action="+thisAction, true);
 	request.send(null);

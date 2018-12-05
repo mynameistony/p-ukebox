@@ -3,24 +3,31 @@
 #echo "Bash: $@"
 
 case $@ in
+	"showInfo")
+		mpc -f "%title% by %artist%" | head -n 1
+	;;
+
 	"togglePlay")
-		mpc toggle
+		mpc -f "%title% by %artist%" toggle | head -n 1
 	;;
 
 	"previousSong")	
-		mpc prev
+		mpc -f "%title% by %artist%" prev | head -n 1
 	;;
 
 	"nextSong")
-		mpc next
+		mpc -f "%title% by %artist%" next | head -n 1
 	;;
 
 	"showArtists")
-	echo "add to backend";;
+		mpc list artist
+	;;
 
 	"showTracks")
-	echo "add to backend";;
+		mpc list title
+	;;
 
 	"showGenres")
-	echo "add to backend";;
+		mpc list genre
+	;;
 esac
