@@ -1,5 +1,5 @@
 function updateInfo(){
-	sendAction(showInfo);
+	sendAction("showInfo");
 };
 
 function changeVolume(){
@@ -8,42 +8,36 @@ function changeVolume(){
 };
 
 function handleResponse(thisResponse){
-	// alert(thisButton);
-
-	document.getElementById("trackInfoPlaceholder").innerHTML = thisResponse;
-
-	switch(thisResponse){
-		case "togglePlay":
-
-		break;
-
-		case "previousSong":
-
-		break;
-
-		case "nextSong":
-
-		break;
-
-		case "showArtists":
-
-		break;
-
-		case "showTracks":
-
-		break;
-
-		case "showGenres":
-
-		break;
-
-		case "changeVolume":
-		break;
-
-
-		default:
-		break;
+	var currentInfo = JSON.parse(thisResponse);
+	if(currentInfo.currentTitle!=""){
+		document.getElementById("currentTitle").innerHTML = currentInfo.currentTitle;
+	}else{
+		document.getElementById("currentTitle").innerHTML = "Unknown Title";
 	}
+
+	if (currentInfo.currentArtist!="") {
+		document.getElementById("currentArtist").innerHTML = currentInfo.currentArtist;
+	}else{
+		document.getElementById("currentArtist").innerHTML = "Unknown Artist";
+	}
+
+	if(currentInfo.randomState=="off"){
+		document.getElementById("randomState").style["color"]="red";
+	}
+		else{
+		document.getElementById("randomState").style["color"]="green";
+	}
+
+	if(currentInfo.repeatState=="off"){
+		document.getElementById("repeatState").style["color"]="red";
+	}
+		else{
+		document.getElementById("repeatState").style["color"]="green";
+	}	
+	//document.getElementById("randomState").innerHTML = currentInfo.randomState;
+	//document.getElementById("repeatState").innerHTML = currentInfo.repeatState;
+
+	
 };
 
 function sendAction(thisAction){

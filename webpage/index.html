@@ -1,8 +1,13 @@
 <script src="scripts.js"></script>
 <link href="style.css" rel="stylesheet" type="text/css">
-<body onload="updateInfo()">
+<body>
 <center>
-	<p id=trackInfoPlaceholder>
+	<p id=trackInfoPlaceholder class="text">
+		<div id="currentTitle" class="text"></div> by 
+		<div id="currentArtist" class="text"></div>
+		<button onClick="sendAction('toggleRandom')" id="randomState" class="small button">Shuffle</button>
+		<button onClick="sendAction('toggleRepeat')" id="repeatState" class="small button">Repeat</button>
+
 	
 	</p>
 
@@ -37,4 +42,3 @@
 	</button>
 </center>	
 </body>
-<script type="text/javascript"><updateInfo()</script>
