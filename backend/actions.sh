@@ -31,7 +31,8 @@ case $@ in
 	;;
 
 	"showArtists")
-		mpc list artist
+		echo -n "<option>Artists</option>"
+		mpc list artist | grep "^.*$" -o | sed s/"^.*$"/"<option value=\'\0\'>\0<\/option>"/g
 	;;
 
 	"showTracks")

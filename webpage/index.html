@@ -2,11 +2,13 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 <body>
 <center>
-	<p id=trackInfoPlaceholder 
+	<div id=trackInfoPlaceholder 
 		class="text">
 		<div id="currentTitle" class="text"></div> by 
 		<div id="currentArtist" class="text"></div>
-	</p>
+	</div>
+
+	<br>
 		<img 
 			src="/shuffle-icon.png" 
 			onClick="sendAction('toggleRandom')" 
@@ -51,15 +53,11 @@
 
 <br><br>
 
-	<button
-	onClick="requestInfo('showArtists')" class="third button">Artists
-	</button>
-	<button 
-	onClick="requestInfo('showTracks')" class="third button">Tracks
-	</button>
-
-	<button 
-	onClick="requestInfo('showGenres')" class="third button">Genres
-	</button>
+	<select 
+		onChange="showTrackByArtist()"
+		id="artistSelector"
+		class="selector"
+	>
+	</select>
 </center>	
 </body>

@@ -50,3 +50,12 @@ body{
 	height: 100px;
 	font-size: 50px;
 }
+
+.selector{
+	width:100%;
+	font-size: 100px;
+	border-radius: 50px;
+	text-align: center;
+	background-color: black;
+	color: grey;
+}
