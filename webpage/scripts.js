@@ -36,9 +36,9 @@ function handleResponse(thisResponse){
 	}	
 
 	if(currentInfo.currentState=="paused"){
-
+		document.getElementById("togglePlay").src = "/play-icon.png";
 	}else{
-
+		document.getElementById("togglePlay").src = "/pause-icon.png";
 	}
 	//document.getElementById("randomState").innerHTML = currentInfo.randomState;
 	//document.getElementById("repeatState").innerHTML = currentInfo.repeatState;
