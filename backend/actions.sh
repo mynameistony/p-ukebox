@@ -19,7 +19,7 @@ case $@ in
 	;;
 
 	"toggleRepeat")
-		mpc -q repeat
+		mpc -q single
 	;;
 
 	"previousSong")	
@@ -52,10 +52,10 @@ case $@ in
 
 esac
 
-repeatState=$(mpc | grep "repeat: [a-z]*" -o | sed s/"repeat: "//)
+repeatState=$(mpc | grep "single: [a-z]*" -o | sed s/"single: "//)
 randomState=$(mpc | grep "random: [a-z]*" -o | sed s/"random: "//)
 currentTitle=$(mpc -f "%title%" | head -n 1)
 currentArtist=$(mpc -f "%artist%" | head -n 1)
 currentVolume=$(mpc | grep "volume: [0-9]*%" -o | sed s/"volume: "// | sed s/"%"//)
-
-echo "{\"currentTitle\":\"$currentTitle\",\"currentArtist\": \"$currentArtist\",\"currentVolume\": \"$currentVolume\", \"repeatState\": \"$repeatState\", \"randomState\": \"$randomState\"}"
+currentState=$(mpc | grep "\[[a-z]*\]" -o | sed s/"\["// | sed s/"\]"//)
+echo "{\"currentTitle\":\"$currentTitle\",\"currentArtist\": \"$currentArtist\",\"currentVolume\": \"$currentVolume\", \"repeatState\": \"$repeatState\", \"randomState\": \"$randomState\", \"currentState\": \"$currentState\"}"

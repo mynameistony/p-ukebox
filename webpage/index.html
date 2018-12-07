@@ -2,14 +2,25 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 <body>
 <center>
-	<p id=trackInfoPlaceholder class="text">
+	<p id=trackInfoPlaceholder 
+		class="text">
 		<div id="currentTitle" class="text"></div> by 
 		<div id="currentArtist" class="text"></div>
-		<button onClick="sendAction('toggleRandom')" id="randomState" class="small button">Shuffle</button>
-		<button onClick="sendAction('toggleRepeat')" id="repeatState" class="small button">Repeat</button>
-
-	
 	</p>
+		<img 
+			src="/shuffle-icon.png" 
+			onClick="sendAction('toggleRandom')" 
+			id="randomState" 
+			class="icon half"
+		>
+
+		<img 
+			src="/replay-icon.png"
+			onClick="sendAction('toggleRepeat')" 
+			id="repeatState" 
+			class="icon half"
+		>
+
 
 	<input 
 		onChange="changeVolume()" 
@@ -18,27 +29,35 @@
 		type="range"
 	>
 
-	<button	onClick="sendAction('togglePlay')" class=button>Play
-	</button>
-<br><br>
-	<button
-	onClick="sendAction('previousSong')" class="button half"><--
-	</button>
-	<button
-	onClick="sendAction('nextSong')" class="button half">--> 
-	</button>
+	<img 
+		src="/prev-track-icon.png"	
+		onClick="sendAction('previousSong')" 
+		class="icon"
+	>
+	
+
+	<img src="/play-icon.png"	
+		onClick="sendAction('togglePlay')" 
+		class="icon"
+	>
+	
+
+	<img src="/next-track-icon.png"
+		onClick="sendAction('nextSong')" 
+		class="icon"
+	>
 
 <br><br>
 
 	<button
-	onClick="sendAction('showArtists')" class="third button">Artists
+	onClick="requestInfo('showArtists')" class="third button">Artists
 	</button>
 	<button 
-	onClick="sendAction('showTracks')" class="third button">Tracks
+	onClick="requestInfo('showTracks')" class="third button">Tracks
 	</button>
 
 	<button 
-	onClick="sendAction('showGenres')" class="third button">Genres
+	onClick="requestInfo('showGenres')" class="third button">Genres
 	</button>
 </center>	
 </body>

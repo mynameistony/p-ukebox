@@ -22,18 +22,24 @@ function handleResponse(thisResponse){
 	}
 
 	if(currentInfo.randomState=="off"){
-		document.getElementById("randomState").style["color"]="red";
+		document.getElementById("randomState").style["background-color"]="red";
 	}
 		else{
-		document.getElementById("randomState").style["color"]="green";
+		document.getElementById("randomState").style["background-color"]="green";
 	}
 
 	if(currentInfo.repeatState=="off"){
-		document.getElementById("repeatState").style["color"]="red";
+		document.getElementById("repeatState").style["background-color"]="red";
 	}
 		else{
-		document.getElementById("repeatState").style["color"]="green";
+		document.getElementById("repeatState").style["background-color"]="green";
 	}	
+
+	if(currentInfo.currentState=="paused"){
+
+	}else{
+
+	}
 	//document.getElementById("randomState").innerHTML = currentInfo.randomState;
 	//document.getElementById("repeatState").innerHTML = currentInfo.repeatState;
 

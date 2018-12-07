@@ -9,11 +9,19 @@ body{
 	background-color: black;
 }
 
+
+.icon{
+	width: 30%;
+	border-radius: 50px;
+	background-color: grey;
+}
+
 .text{
 	
 	color: grey;
 	font-size: 100px;
-	background-color: black;	
+	background-color: #0f0f0f;	
+	border-radius: 100px;
 }
 
 .button{
@@ -29,7 +37,7 @@ body{
 	width: 45%;
 }
 .half{
-	width: 45%;
+	width:20%;
 }
 
 .third{
